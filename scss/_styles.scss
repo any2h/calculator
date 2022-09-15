@@ -1,0 +1,233 @@
+/* ------------ */
+/* Layout       */
+/* ------------ */
+
+.wrapper {
+    padding: 1rem;
+}
+
+@media (min-width: 48em) {
+    .wrapper {
+        max-width: 30rem;
+        margin: 5rem auto;
+    }
+}
+
+.header {
+    justify-content: space-between;
+
+    .app-name {
+        align-self: center;
+    }
+}
+
+.theme-wrapper {
+    --gap: 1.5rem;
+
+    > :first-child {
+        font-size: .75rem;
+        align-self: end;
+        margin-bottom: .5rem;
+    }
+
+    .theme-details {
+        > :first-child {
+            display: flex;
+            justify-content: space-around;
+            font-size: .75rem;
+            margin-bottom: .25rem;
+        }
+
+        .theme-indicators {
+            display: flex;
+            gap: .5rem;
+            justify-content: space-between;
+            padding: .4rem;
+            border-radius: 25px;
+
+            > * {
+                aspect-ratio: 1;
+                width: 1.25rem;
+                border: 0;
+                border-radius: 50%;
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+.output {
+    padding: 1.5rem;
+    height: 7.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    border-radius: 10px;
+
+    > :first-child {
+        flex: 1;
+        font-size: 1.25rem;
+        opacity: .55;
+    }
+}
+
+.btn-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1.5rem;
+    border-radius: 10px;
+
+    > * {
+        padding: .5rem;
+        border-radius: 12.5px;
+    }
+
+    [data-reset], [data-delete] {
+        font-size: 1.25rem;
+    }
+
+    [data-reset], [data-equals] {
+        grid-column: span 2;
+    }
+}
+
+
+/* ----------- */
+/* Themes      */
+/* ----------- */
+
+/* Theme 1 */
+.theme-1 {
+    background-color: $very-dark-desaturated-blue-main;
+
+    .header {
+        color: $white;
+
+        .theme-indicators {
+            background-color: $very-dark-desaturated-blue2;
+
+            > *.active {
+                background-color: $red;
+            }
+        }
+    }
+
+    .output {
+        background-color: $very-dark-desaturated-blue3;
+        color: $white;
+    }
+
+    .btn-container {
+        background-color: $very-dark-desaturated-blue2;
+
+        > * {
+            background-color: $light-grayish-orange;
+            color: $very-dark-grayish-blue;
+            border: 0;
+            box-shadow: 0 4px 0 0 $grayish-orange;
+        }
+
+        [data-reset], [data-delete] {
+            background-color: $desaturated-dark-blue;
+            color: $white;
+            box-shadow: 0 4px 0 0 $desaturated-dark-blue2;
+        }
+
+        [data-equals] {
+            background-color: $red;
+            color: $white;
+            box-shadow: 0 4px 0 0 $dark-red;
+        }
+    }
+}
+
+/* Theme-2 */
+.theme-2 {
+    background-color: $light-gray;
+
+    .header {
+        color: $very-dark-grayish-yellow;
+
+        .theme-indicators {
+            background-color: $grayish-red;
+
+            > *.active {
+                background-color: $orange;
+            }
+        }
+    }
+
+    .output {
+        background-color: $very-light-gray;
+        color: $very-dark-grayish-yellow;
+    }
+
+    .btn-container {
+        background-color: $grayish-red;
+
+        > * {
+            background-color: $light-grayish-yellow;
+            color: $very-dark-grayish-yellow;
+            border: 0;
+            box-shadow: 0 4px 0 0 $dark-grayish-orange;
+        }
+
+        [data-reset], [data-delete] {
+            background-color: $dark-moderate-cyan;
+            color: $white;
+            box-shadow: 0 4px 0 0 $very-dark-cyan;
+        }
+
+        [data-equals] {
+            background-color: $orange;
+            color: $white;
+            box-shadow: 0 4px 0 0 $dark-orange;
+        }
+    }
+}
+
+/* Theme 3 */
+.theme-3 {
+    background-color: $very-dark-violet1;
+
+    .header {
+        color: $light-yellow;
+
+        .theme-indicators {
+            background-color: $very-dark-violet2;
+
+            > *.active {
+                background-color: $pure-cyan;
+            }
+        }
+    }
+
+    .output {
+        background-color: $very-dark-violet2;
+        color: $light-yellow;
+    }
+
+    .btn-container {
+        background-color: $very-dark-violet2;
+
+        > * {
+            background-color: $very-dark-violet-key;
+            color: $light-yellow;
+            border: 0;
+            box-shadow: 0 4px 0 0 $dark-magenta;
+        }
+
+        [data-reset], [data-delete] {
+            background-color: $dark-violet;
+            color: $white;
+            box-shadow: 0 4px 0 0 $vivid-magenta;
+        }
+
+        [data-equals] {
+            background-color: $pure-cyan;
+            color: $very-dark-blue;
+            box-shadow: 0 4px 0 0 $soft-cyan;
+        }
+    }
+}

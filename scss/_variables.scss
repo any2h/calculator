@@ -1,0 +1,83 @@
+/* ----------------- */
+/* Custom Properties */
+/* ----------------- */
+
+/* font-size */
+$numbers: 2rem;
+
+/*** Theme 1 ***/
+
+/* backgrounds */
+$very-dark-desaturated-blue-main: hsl(222, 26%, 31%); // (main background)
+$very-dark-desaturated-blue2: hsl(223, 31%, 20%); // (toggle background, keypad background)
+$very-dark-desaturated-blue3: hsl(224, 36%, 15%); // (screen background)
+
+/* keys */
+$desaturated-dark-blue: hsl(225, 21%, 49%); // (key background)
+$desaturated-dark-blue2: hsl(224, 28%, 35%); // (key shadow)
+
+$red: hsl(6, 63%, 50%); // (key background, toggle)
+$dark-red: hsl(6, 70%, 34%); // (key shadow)
+
+$light-grayish-orange : hsl(30, 25%, 89%); // (key background)
+$grayish-orange: hsl(28, 16%, 65%); // (key shadow)
+
+/* text */
+$very-dark-grayish-blue: hsl(221, 14%, 31%);
+$white: hsl(0, 0, 100%);
+
+
+/*** Theme 2 ***/
+
+/* backgrounds */
+$light-gray: hsl(0, 0%, 90%); // (main background)
+$grayish-red: hsl(0, 5%, 81%); // (toggle background, keypad background)
+$very-light-gray: hsl(0, 0%, 93%); // (screen background)
+
+/* keys */
+$dark-moderate-cyan: hsl(185, 42%, 37%); // (key background)
+$very-dark-cyan: hsl(185, 58%, 25%); // (key shadow)
+
+$orange: hsl(25, 98%, 40%); // (key background, toggle)
+$dark-orange: hsl(25, 99%, 27%); // (key shadow)
+
+$light-grayish-yellow: hsl(45, 7%, 89%); // (key background)
+$dark-grayish-orange: hsl(35, 11%, 61%); // (key shadow)
+
+/* text */
+$very-dark-grayish-yellow: hsl(60, 10%, 19%);
+
+
+/*** Theme 3 ***/
+
+/* backgrounds */
+$very-dark-violet1: hsl(268, 75%, 9%); // (main background)
+$very-dark-violet2: hsl(268, 71%, 12%); // (toggle background, keypad background, screen background)
+
+/* keys */
+$dark-violet: hsl(281, 89%, 26%); // (key background)
+$vivid-magenta: hsl(285, 91%, 52%); // (key shadow)
+
+$pure-cyan: hsl(176, 100%, 44%); // (key background, toggle)
+$soft-cyan: hsl(177, 92%, 70%); // (key shadow)
+
+$very-dark-violet-key: hsl(268, 47%, 21%); // (key background)
+$dark-magenta: hsl(290, 70%, 36%); // (key shadow)
+
+/* text */
+$light-yellow: hsl(52, 100%, 62%);
+$very-dark-blue: hsl(198, 20%, 13%);
+
+
+/* --------------- */
+/* Utility Classes */
+/* --------------- */
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.flow > * + * {
+    margin-top: var(--flow-space, 1.5rem);
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator app</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="scss/main.css">
+</head>
+  <body>
+    <div class="wrapper flow">
+      <div class="header flex">
+        <span class="app-name">calc</span>
+
+        <div class="theme-wrapper flex">
+          <div>THEME</div>
+
+          <div class="theme-details">
+            <div>
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+            </div>
+
+            <div class="theme-indicators">
+              <button data-theme="theme-1"></button>
+              <button data-theme="theme-2"></button>
+              <button data-theme="theme-3"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="output">
+        <span data-previous></span>
+        <span data-current></span>
+      </div>
+
+      <div class="btn-container">
+        <button data-number>7</button>
+        <button data-number>8</button>
+        <button data-number>9</button>
+        <button data-delete>DEL</button>
+        <button data-number>4</button>
+        <button data-number>5</button>
+        <button data-number>6</button>
+        <button data-operator>+</button>
+        <button data-number>1</button>
+        <button data-number>2</button>
+        <button data-number>3</button>
+        <button data-operator>-</button>
+        <button data-number>.</button>
+        <button data-number>0</button>
+        <button data-operator>/</button>
+        <button data-operator>x</button>
+        <button data-reset>RESET</button>
+        <button data-equals>=</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

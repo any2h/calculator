@@ -1,0 +1,273 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Spartan", sans-serif;
+  font-size: 2rem;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* ----------------- */
+/* Custom Properties */
+/* ----------------- */
+/* font-size */
+/*** Theme 1 ***/
+/* backgrounds */
+/* keys */
+/* text */
+/*** Theme 2 ***/
+/* backgrounds */
+/* keys */
+/* text */
+/*** Theme 3 ***/
+/* backgrounds */
+/* keys */
+/* text */
+/* --------------- */
+/* Utility Classes */
+/* --------------- */
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1.5rem);
+}
+
+/* ------------ */
+/* Layout       */
+/* ------------ */
+.wrapper {
+  padding: 1rem;
+}
+
+@media (min-width: 48em) {
+  .wrapper {
+    max-width: 30rem;
+    margin: 5rem auto;
+  }
+}
+.header {
+  justify-content: space-between;
+}
+.header .app-name {
+  align-self: center;
+}
+
+.theme-wrapper {
+  --gap: 1.5rem;
+}
+.theme-wrapper > :first-child {
+  font-size: 0.75rem;
+  align-self: end;
+  margin-bottom: 0.5rem;
+}
+.theme-wrapper .theme-details > :first-child {
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+.theme-wrapper .theme-details .theme-indicators {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  padding: 0.4rem;
+  border-radius: 25px;
+}
+.theme-wrapper .theme-details .theme-indicators > * {
+  aspect-ratio: 1;
+  width: 1.25rem;
+  border: 0;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.output {
+  padding: 1.5rem;
+  height: 7.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  border-radius: 10px;
+}
+.output > :first-child {
+  flex: 1;
+  font-size: 1.25rem;
+  opacity: 0.55;
+}
+
+.btn-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+.btn-container > * {
+  padding: 0.5rem;
+  border-radius: 12.5px;
+}
+.btn-container [data-reset], .btn-container [data-delete] {
+  font-size: 1.25rem;
+}
+.btn-container [data-reset], .btn-container [data-equals] {
+  grid-column: span 2;
+}
+
+/* ----------- */
+/* Themes      */
+/* ----------- */
+/* Theme 1 */
+.theme-1 {
+  background-color: hsl(222deg, 26%, 31%);
+}
+.theme-1 .header {
+  color: hsl(0deg, 0%, 100%);
+}
+.theme-1 .header .theme-indicators {
+  background-color: hsl(223deg, 31%, 20%);
+}
+.theme-1 .header .theme-indicators > *.active {
+  background-color: hsl(6deg, 63%, 50%);
+}
+.theme-1 .output {
+  background-color: hsl(224deg, 36%, 15%);
+  color: hsl(0deg, 0%, 100%);
+}
+.theme-1 .btn-container {
+  background-color: hsl(223deg, 31%, 20%);
+}
+.theme-1 .btn-container > * {
+  background-color: hsl(30deg, 25%, 89%);
+  color: hsl(221deg, 14%, 31%);
+  border: 0;
+  box-shadow: 0 4px 0 0 hsl(28deg, 16%, 65%);
+}
+.theme-1 .btn-container [data-reset], .theme-1 .btn-container [data-delete] {
+  background-color: hsl(225deg, 21%, 49%);
+  color: hsl(0deg, 0%, 100%);
+  box-shadow: 0 4px 0 0 hsl(224deg, 28%, 35%);
+}
+.theme-1 .btn-container [data-equals] {
+  background-color: hsl(6deg, 63%, 50%);
+  color: hsl(0deg, 0%, 100%);
+  box-shadow: 0 4px 0 0 hsl(6deg, 70%, 34%);
+}
+
+/* Theme-2 */
+.theme-2 {
+  background-color: hsl(0deg, 0%, 90%);
+}
+.theme-2 .header {
+  color: hsl(60deg, 10%, 19%);
+}
+.theme-2 .header .theme-indicators {
+  background-color: hsl(0deg, 5%, 81%);
+}
+.theme-2 .header .theme-indicators > *.active {
+  background-color: hsl(25deg, 98%, 40%);
+}
+.theme-2 .output {
+  background-color: hsl(0deg, 0%, 93%);
+  color: hsl(60deg, 10%, 19%);
+}
+.theme-2 .btn-container {
+  background-color: hsl(0deg, 5%, 81%);
+}
+.theme-2 .btn-container > * {
+  background-color: hsl(45deg, 7%, 89%);
+  color: hsl(60deg, 10%, 19%);
+  border: 0;
+  box-shadow: 0 4px 0 0 hsl(35deg, 11%, 61%);
+}
+.theme-2 .btn-container [data-reset], .theme-2 .btn-container [data-delete] {
+  background-color: hsl(185deg, 42%, 37%);
+  color: hsl(0deg, 0%, 100%);
+  box-shadow: 0 4px 0 0 hsl(185deg, 58%, 25%);
+}
+.theme-2 .btn-container [data-equals] {
+  background-color: hsl(25deg, 98%, 40%);
+  color: hsl(0deg, 0%, 100%);
+  box-shadow: 0 4px 0 0 hsl(25deg, 99%, 27%);
+}
+
+/* Theme 3 */
+.theme-3 {
+  background-color: hsl(268deg, 75%, 9%);
+}
+.theme-3 .header {
+  color: hsl(52deg, 100%, 62%);
+}
+.theme-3 .header .theme-indicators {
+  background-color: hsl(268deg, 71%, 12%);
+}
+.theme-3 .header .theme-indicators > *.active {
+  background-color: hsl(176deg, 100%, 44%);
+}
+.theme-3 .output {
+  background-color: hsl(268deg, 71%, 12%);
+  color: hsl(52deg, 100%, 62%);
+}
+.theme-3 .btn-container {
+  background-color: hsl(268deg, 71%, 12%);
+}
+.theme-3 .btn-container > * {
+  background-color: hsl(268deg, 47%, 21%);
+  color: hsl(52deg, 100%, 62%);
+  border: 0;
+  box-shadow: 0 4px 0 0 hsl(290deg, 70%, 36%);
+}
+.theme-3 .btn-container [data-reset], .theme-3 .btn-container [data-delete] {
+  background-color: hsl(281deg, 89%, 26%);
+  color: hsl(0deg, 0%, 100%);
+  box-shadow: 0 4px 0 0 hsl(285deg, 91%, 52%);
+}
+.theme-3 .btn-container [data-equals] {
+  background-color: hsl(176deg, 100%, 44%);
+  color: hsl(198deg, 20%, 13%);
+  box-shadow: 0 4px 0 0 hsl(177deg, 92%, 70%);
+}/*# sourceMappingURL=main.css.map */
