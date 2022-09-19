@@ -16,8 +16,13 @@ let currentValue = ''
 const addNumber = (num) => {
     if (num === '.' && currentValue.includes('.')) return
 
-    currentValue += num
-    updateOutput()
+    if (num === '0' && currentValue === '') {
+        currentValue = '0.'
+        updateOutput()
+    } else {
+        currentValue += num
+        updateOutput()
+    }
 }
 
 const selectOperation = (operation) => {
@@ -69,6 +74,7 @@ const updateOutput = () => {
 }
 
 const delNumber = () => {
+    if (currentValue === '0.') currentValue = ''
     currentValue = currentValue.toString().slice(0, -1)
     updateOutput()
 }
